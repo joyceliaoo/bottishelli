@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/bash
 
 # for loop
 # ---------- SYNTAX ----------
@@ -8,11 +8,10 @@
 # done
 # ----------------------------
 echo "---------- FOR LOOPS ----------"
-for i in hello 1 * 2 goodbye 
+for i in 1 2 3
 do
-  echo "Looping ... i is set to $i"
+	echo "$i"
 done
-echo
 
 # while loop
 # ---------- SYNTAX ----------
@@ -22,14 +21,13 @@ echo
 # done
 # ----------------------------
 echo "---------- WHILE LOOPS ----------"
-INPUT_STRING=hello
-while [ "$INPUT_STRING" != "bye" ]
+theme="vOtEfOrAtHeMe"
+while [ "$theme" != "renaissance" ]
 do
-  echo "Please type something in (bye to quit)"
-  read INPUT_STRING
-  echo "You typed: $INPUT_STRING"
+  echo "best SING! theme?? (type renaissance to quit)"
+  read theme
+  echo "You typed: $theme, we cool"
 done
-echo
 
 # if statements
 # ---------- SYNTAX ----------
@@ -45,24 +43,20 @@ echo
 # ----------------------------
 echo "---------- IF STATEMENTS ----------"
 X=3
-if [ "$X" -lt "3" ]
-then
-  echo "X is less than zero"
-elif [ "$X" -eq "3" ]
-then
-  echo "X is equal to three"
-else
-  echo "X is greater than three"
+if  [ $X -lt 3 ]; then
+ echo "Something"
+ elif [ $X -eq 3 ]; then
+   echo "Something else"
+ else
+   echo "None of the above"
 fi
-echo
 
+# test statements - if-statements in disguise
 # ---------- SYNTAX ----------
 # [ <condition> ] && <command> || <command>
 # ----------------------------
 [ $X -ne 0 ] && echo "X isn't zero" || echo "X is zero"
-[ -f $X ] && echo "X is a file" || echo "X is not a file"
-[ -n $X ] && echo "X is of non-zero length" || echo "X is of zero length"
-echo
+
 
 # case statements
 # ---------- SYNTAX ----------
