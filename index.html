@@ -201,12 +201,12 @@
 	      sleep_hr=3
 	      if [ "$sleep_hr" -lt "5" ]
 	      then
-	        echo "physically and mentally tired"
+	      echo "physically and mentally tired"
 	      elif [ "$sleep_hr" -eq "5" ]
 	      then
-	        echo "mentally tired"
+	      echo "mentally tired"
 	      else
-	        echo "just tired"
+	      echo "just tired"
 	      fi
 	  </code></pre>
 	  <p>Output:</p>
@@ -225,7 +225,7 @@
 
 	      for i in marge bart homer lisa 6 7 8
 	      do
-	        echo "$i"
+	      echo "$i"
 	      done
 	  </code></pre>
 	  <p> Output:</p>
@@ -250,17 +250,17 @@
 
 	      while [ "$editor" != "sublime" ] # the spaces must exist
 	      do
-	        echo "emacs or vim? (type sublime to quit)"
-	        read editor # take user input
-	        echo "You typed: $editor"
+	      echo "emacs or vim? (type sublime to quit)"
+	      read editor # take user input
+	      echo "You typed: $editor"
 	      if [ "$editor" = "emacs" ]
 	      then
-	        echo "think again"
+	      echo "think again"
 	      elif [ "$editor" = "vim" ]
 	      then
-	        echo "good choice"
+	      echo "good choice"
 	      else
-	        echo "never heard of that"
+	      echo "never heard of that"
 	      fi
 	      done
 	  </code></pre>
@@ -291,20 +291,20 @@
 
 	      while : # colon always evaluates to true
 	      do
-	        echo "carnival or renaissance?"
-	        read theme
-	        case $theme in
-	          renaissance)
-	            echo "slate says yes"
-	            break
-	            ;;
-	      carnival)
-	        echo "it's renaissance anyways"
-	        break
-	        ;;
-	      *)
-	        echo "Are you sophfrosh..."
-	        ;;
+	      echo "carnival or renaissance?"
+	      read theme
+	      case $theme in
+	        renaissance)
+	          echo "slate says yes"
+	          break
+	          ;;
+	        carnival)
+	          echo "it's renaissance anyways"
+	          break
+	          ;;
+	        *)
+	          echo "Are you sophfrosh..."
+	          ;;
 	      esac
 	      done
 	  </code></pre>
@@ -328,8 +328,8 @@
 	      
 	      for i in $@
 	      do
-	        echo "arg $ct is $i"
-	        ct=`expr $ct + 1` # increment ct by 1
+	      echo "arg $ct is $i"
+	      ct=`expr $ct + 1` # increment ct by 1
 	      done
 	  </code></pre>
 	  <p>Output:</p>
