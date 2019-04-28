@@ -5,5 +5,85 @@
 </head>
 <body>
 	<h1 id="header"> Shell Scripting </h1>
+	<hr>
+	<h2> What is a shell? </h2>
+	<p>
+		<ul>
+			<li>
+				The <b>shell</b>, along with the <b>kernel</b>
+				are the two main components of a computer's operating system (OS).
+			</li>
+			<li>
+				The kernel is the innermost part of the OS.
+				It facilitates communication between the hardware and software.
+				It is also what makes an OS distinct from another.
+			</li>
+			<li>
+				The shell is the outermost part of the OS.
+				It is an interface that takes input in the form of a command and returns output.
+				It protects the OS from accidental damages (hence its name).
+				A <b>terminal</b> is often used to access a shell.
+			</li>
+		</ul>
+	</p>
+	<h2> Background </h2>
+	<h3> First UNIX Shell </h3>
+	<p> The first UNIX shell was created by <b>Ken Thomson</b> in 1971.
+		It was an interactive shell, but lacked scripting ability.
+	</p>
+	<h3> Common Types of UNIX Shells </h3>
+	<h4> Bourne Shell </h4>
+	<ul>
+		<li>Developed by <b>Steve Bourne</b></li>
+		<li>First appeared in the Seventh Edition Bell Labs Research version of UNIX in 1977 </li>
+		<li>The popular shell <b>BASH</b> (Bourne Again Shell) is a derivative of the Bourne Shell</li>
+		<li>Its command prompt is <code>$</code></li>
+	</ul>
+	<h4> C Shell (CSH) </h4>
+	<ul>
+		<li> Developed by <b>Bill Joy</b> at UC-Berkeley in 1978 </li>
+		<li> A variation of the C Shell is the <b>Top C Shell</b> (TCSH) </li>
+		<li> Suited for network/system administrators or other professionals in the field</li>
+		<li> Its command prompt is <code>%</code></li>
+	</ul>
+	<h4> Korn Shell </h4>
+	<ul>
+		<li> Developed by <b>David Korn</b> at Bell Labs, released in 1983</li>
+		<li> Has slightly more features and better performance (e.g. better print command) than Bourne Shell, but requires more effort to learn
+	</ul>
+	<hr>
+	<h2> Q: So, what is <i>shell scripting</i>?</h2>
+	<h4> A: writing a a script that contains a series of commands for the shell to interpret and execute</h4>
+	<h2> Q: Why should I learn to write shell scripts?</h2>
+	<h4> A: It is useful for creating a procedure that runs your own commands,
+		as opposed to typing them into your terminal one by one. This can save you lots of time.
+		It helps to automate some tasks of day-to-day life, such as system administration.
+	</h4>
+	<h2> Q: What are some down sides of this glory practice?</h2>
+	<h4> A: As much as it helps to speed things up, a shell script runs slower than a C program.
+		However, it definitely makes life easier on the human end!
+	</h4>
+	<h4> A: There are also many bad shell scripts out there, since it is so easy to pick up...
+		All the more reason why you should add it to your programming tool kit :)
+		<p> Remember NOT to: </p>
+		<ul>
+			<li>Complicate your script as to hinder comprehension</li>
+			<li>Slack on your indentation game</li>
+			<li>Be extra on achieving a goal (keep it simple!)</li>
+		</ul>
+	</h4>
+	<hr>
+	<h2> Let's write some shell scripts! (for BASH)</h2>
+	<h4> First, create a file with the <i>.sh</i> extension</h4>
+	<pre><code>	touch script.sh</code></pre>
+	<h4> The first line of the file should always be</h4>
+	<pre><code>	#! /bin/sh</pre></code>
+	<p> (directs the script to the location of the Bourne Shell script interpreter)</p>
+	<h4> To test a shell script through BASH: </h4>
+	<pre><code>	bash script.sh </pre></code>
+	<h4> To run a shell script as an executable (to be incorporated in another program): </h4>
+	<pre><code>	chmod a+x script.sh
+		./script.sh</pre></code>
+
 </body>
 </html>
