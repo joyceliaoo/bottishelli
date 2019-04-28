@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<title> Shell Scripting 101 </title>
 </head>
 <body>
@@ -74,6 +75,7 @@
 	</h4>
 	<hr>
 	<h2> Let's write some shell scripts! (for BASH)</h2>
+	<h3> Running a script </h3>
 	<h4> First, create a file with the <i>.sh</i> extension</h4>
 	<pre><code>	touch script.sh</code></pre>
 	<h4> The first line of the file should always be</h4>
@@ -84,6 +86,49 @@
 	<h4> To run a shell script as an executable (to be incorporated in another program): </h4>
 	<pre><code>	chmod a+x script.sh
 		./script.sh</pre></code>
+	<h3> Syntax </h3>
+	<h4> Example 1 : Basics + Variables </h4>
+	<pre><code>
+	# Each command is on an individual line
+	echo "hello world"
+	ls
+	# declare a variable
+	# NOTE: do NOT leave any space on both sides of the = sign
+	food="sushi"
+	num=2
+	# use $var_name to access value of variable
+	echo "$food $num"</code></pre>
+	<h4> Output of Example 1 </h4>
+	<pre><samp>hello world
+&lt;content of current dir&gt;
+sushi 2
+</samp></pre>
+	<h4> Example 2 : If Statements </h4>
+	<pre><code>
+	# ---------- SYNTAX ----------
+	# if [ &lt;condition&gt; ]
+	# then
+	#   &lt;command(s)&gt;
+	# elif [ &lt;condition&gt; ]
+	# then
+	#   &lt;command(s)&gt;
+	# else
+	#   &lt;command(s)&gt;
+	# fi
+	# ----------------------------
+
+	sleep_hr=3
+	if [ "$sleep_hr" -lt "5" ]
+	then
+	    echo "physically and mentally tired"
+	elif [ "$sleep_hr" -eq "5" ]
+	then
+	    echo "mentally tired"
+	else
+	    echo "just tired"
+	fi</code></pre>
+	<h4> Output of Example 2 </h4>
+	<pre><samp>physically and mentally tired</samp><pre>
 
 </body>
 </html>
