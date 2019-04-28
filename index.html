@@ -225,7 +225,7 @@
 
 	      for i in marge bart homer lisa 6 7 8
 	      do
-	      echo "$i"
+	         echo "$i"
 	      done
 	  </code></pre>
 	  <p> Output:</p>
@@ -347,27 +347,27 @@
 
 	  <h4 id="demo7">Demo 7 : Function Arguments</h4>
 	  <pre><code>
-	      # declare a variable
-	      # there are no local variables in a shell script
+          # declare a variable
+          # there are no local variables in a shell script
 
-	      g_var="original value"
+          g_var="original value"
 
-	      my_func() {
-	      # since $@ is used in a function definition,
-	      # it refers to the list of args that the function is called with
-	      
-	      for i in $@
-	      do
-	      touch "stuff/$i.txt"`
-	      done
-	      
-	      # all var values are global
-	      g_var="global var has been modified"
-	      }
-	      
-	      my_func come watch SING!
-	      ls stuff/
-	      echo "g_var = $g_var"
+          my_func() {
+              # since $@ is used in a function definition,
+              # it refers to the list of args that the function is called with
+
+              for i in $@
+              do
+                 touch "stuff/$i.txt"`
+              done
+
+              # all var values are global
+              g_var="global var has been modified"
+          }
+
+          my_func come watch SING!
+          ls stuff/
+          echo "g_var = $g_var"
 	  </code></pre>
 	  <p>Output:</p>
 	  <p><i>note: assuming an empty dir named</i> stuff/ <i>exists, the output is</i></p>
