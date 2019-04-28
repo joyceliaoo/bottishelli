@@ -24,18 +24,18 @@ do
     echo "$i"
 done
 
-## if statements
-## ---------- SYNTAX ----------
-## if [ <condition> ]
-## then
-##   <command(s)>
-## elif [ <condition> ]
-## then
-##   <command(s)>
-## else
-##   <command(s)>
-## fi
-## ----------------------------
+# if statements
+# ---------- SYNTAX ----------
+# if [ <condition> ]
+# then
+#   <command(s)>
+# elif [ <condition> ]
+# then
+#   <command(s)>
+# else
+#   <command(s)>
+# fi
+# ----------------------------
 echo "---------- IF STATEMENTS ----------"
 sleep_hr=3
 if [ "$sleep_hr" -lt "5" ]
@@ -48,13 +48,13 @@ else
     echo "just tired"
 fi
 
-## while loop
-## ---------- SYNTAX ----------
-## while [ <condition> ]
-## do
-##   <command(s)>
-## done
-## ----------------------------
+# while loop
+# ---------- SYNTAX ----------
+# while [ <condition> ]
+# do
+#   <command(s)>
+# done
+# ----------------------------
 echo "---------- WHILE LOOPS ----------"
 editor="atom"
 while [ "$editor" != "sublime" ] # the spaces must exist
@@ -74,17 +74,17 @@ do
 done
 
 
-## case statements
-## ---------- SYNTAX ----------
-## case <param> in
-##   <string1>)
-##     <command(s)>
-##     ;;
-##   <string2>)
-##     <command(s)>
-##     ;;
-## esac
-## ----------------------------
+# case statements
+# ---------- SYNTAX ----------
+# case <param> in
+#   <string1>)
+#     <command(s)>
+#     ;;
+#   <string2>)
+#     <command(s)>
+#     ;;
+# esac
+# ----------------------------
 echo "---------- CASE STATEMENTS ----------"
 while : # colon always evaluates to true
 do

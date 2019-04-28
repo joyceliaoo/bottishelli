@@ -13,4 +13,5 @@ my_func()
 }
 
 my_func come watch SING!
+ls stuff/
 echo "g_var = $g_var"

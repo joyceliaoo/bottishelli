@@ -128,7 +128,155 @@ sushi 2
 	    echo "just tired"
 	fi</code></pre>
 	<h4> Output of Example 2 </h4>
-	<pre><samp>physically and mentally tired</samp><pre>
+	<pre><samp>physically and mentally tired</samp></pre>
+	<h4> Example 3 : For Loops </h4>
+	<pre><code>
+	# ---------- SYNTAX ----------
+   	# for &lt;var_name&gt; in &lt;param(s)&gt;
+   	# do
+   	#   &lt;command(s)&gt;
+   	# done
+   	# ----------------------------
 
+	for i in marge bart homer lisa 6 7 8
+	do
+	    echo "$i"
+	done</code></pre>
+	<h4> Output of Example 3 </h4>
+	<pre><samp>marge
+bart
+homer
+lisa
+6
+7
+8</samp></pre>
+	<h4> Example 4 : While Loops </h4>
+	<pre><code>
+	# ---------- SYNTAX ----------
+	# while [ &lt;condition&gt; ]
+	# do
+	#   &lt;command(s)&gt;
+	# done
+	# ----------------------------
+
+	while [ "$editor" != "sublime" ] # the spaces must exist
+	do
+	    echo "emacs or vim? (type sublime to quit)"
+	    read editor # take user input
+	    echo "You typed: $editor"
+	    if [ "$editor" = "emacs" ]
+	    then
+	        echo "think again"
+	    elif [ "$editor" = "vim" ]
+	    then
+	        echo "good choice"
+	    else
+	        echo "never heard of that"
+	    fi
+	done</code></pre>
+	<h4> Output of Example 4 </h4>
+	<pre><samp>emacs or vim? (type sublime to quit)
+>(enter vim)
+You typed: vim
+good choice
+emacs or vim? (type sublime to quit)
+>(enter sublime)
+You typed: sublime
+never heard of that</samp></pre>
+	<h4> Example 5 : Case Statements </h4>
+	<pre><code>
+	# ---------- SYNTAX ----------
+	# case &lt;param&gt; in
+	#   &lt;string1&gt;)
+	#     &lt;command(s)&gt;
+	#     ;;
+	#   &lt;string2&gt;)
+	#     &lt;command(s)>
+	#     ;;
+	# esac
+	# ----------------------------
+
+	while : # colon always evaluates to true
+	do
+	echo "carnival or renaissance?"
+	read theme
+	case $theme in
+		renaissance)
+		   echo "slate says yes"
+	       break
+	       ;;
+		carnival)
+			echo "it's renaissance anyways"
+			break
+	       ;;
+		*)
+			echo "Are you sophfrosh..."
+	       ;;
+	esac
+	done</code></pre>
+	<h4> Output of Example 5 </h4>
+	<pre><samp>carnival or renaissance?
+>(enter hello)
+Are you sophfrosh...
+carnival or renaissance?
+>(enter carnival)
+it's renaissance anyways</samp></pre>
+
+<h4> Example 6 : Command Line Arguments </h4>
+<pre><code>
+	ct=0
+
+	# $&lt;int&gt; accesses value of command line arguments,
+	# starting with $0, the first argument
+	# $@ is the list of all available command line arguments
+
+	for i in $@
+	do
+		echo "arg $ct is $i"
+		ct=`expr $ct + 1` # increment ct by 1
+	done</code></pre>
+<h4> Output of Example 6 </h4>
+<p> Suppose the above code block is saved in a file named <i> demo.sh</i>,
+	running
+	<pre><code>./demo.sh hello there haha</code></pre>
+	would yield: </p>
+<pre><samp>
+arg 0 is hello
+arg 1 is there
+arg 2 is haha
+</samp></pre>
+<h4> Example 7 : Function Arguments </h4>
+<pre><code>
+	# declare a variable
+	# there are no local variables in a shell script
+
+	g_var="original value"
+
+	my_func()
+	{
+		# since $@ is used in a function definition,
+		# it refers to the list of args that the function is called with
+
+		for i in $@
+		do
+			`touch "stuff/$i.txt"`
+		done
+
+		# all var values are global
+		g_var="global var has been modified"
+	}
+
+	my_func come watch SING!
+	ls stuff/
+	echo "g_var = $g_var"</code></pre>
+<h4> Output of Example 7 </h4>
+<p><i>note: assuming an empty dir named</i> stuff/ <i>exists, the output is</i></p>
+<pre><samp>
+SING!.txt       come.txt        watch.txt
+g_var = global var has been modified
+</samp></pre>
+<footer>&copy; Copyright
+	<a href="https://github.com/joyceliaoo/bottishelli">bottiSHELLi</a> 2019
+</footer>
 </body>
 </html>
